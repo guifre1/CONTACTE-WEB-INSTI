@@ -7,14 +7,7 @@
     <link rel="stylesheet" href="style/style.css">
     <script src="java.js"></script>
     <title>⭐WEB 1er A Batxillerat⭐</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
+    
 </head>
 <body>
 <!--------------------------------------------------------------------------------------------------------------------------------------->
@@ -142,26 +135,6 @@
 <!--------------------------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------------------------------------------------------------------------------------------------->
 </main>
-<h1>Mi mapa de Google</h1>
-    <div id="map"></div>
-    <script>
-        function initMap() {
-            var myLatLng = {lat: 37.7749, lng: -122.4194};
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 12,
-                center: myLatLng
-            });
-
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: '¡Hola, mundo!'
-            });
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=TU_CLAVE_API&callback=initMap"
-    async defer></script>
 
 </body>
 </html>
