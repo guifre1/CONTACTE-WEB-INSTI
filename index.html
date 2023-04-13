@@ -145,34 +145,37 @@ import { Tile } from "ol/layer";
 import { OSM, TileWMS } from "ol/source";
 import { fromLonLat } from "ol/proj";
 import GUI from "lil-gui";
+const tileLayerOSM = new Tile({
+  source: new OSM(),
+});
 const tileLayerTopoCat = new Tile({
-    source: new TileWMS({
-      projection: "EPSG:25831",
-      url: "https://geoserveis.icgc.cat/icc_mapesmultibase/utm/wms/service?",
-      params: {
-        LAYERS: "topo",
-      },
-    }),
-  });
-  const tileLayerSummer2019Cat = new Tile({
-    source: new TileWMS({
-      projection: "EPSG:25831",
-      url: "https://geoserveis.icgc.cat/icgc_sentinel2/wms/service?",
-      params: {
-        LAYERS: "sen2rgb_mosaic_estiu_2019",
-      },
-    }),
-  });
-  const tileLayerFire2019Cat = new Tile({
-    source: new TileWMS({
-      projection: "EPSG:25831",
-      url: "https://geoserveis.icgc.cat/servei/catalunya/incendis/wms/service?",
-      params: {
-        LAYERS: "20190701-RiberaEbre-orto15cm-rgb",
-      },
-    }),
-  });
-  const map = new Map({
+  source: new TileWMS({
+    projection: "EPSG:25831",
+    url: "https://geoserveis.icgc.cat/icc_mapesmultibase/utm/wms/service?",
+    params: {
+      LAYERS: "topo",
+    },
+  }),
+});
+const tileLayerSummer2019Cat = new Tile({
+  source: new TileWMS({
+    projection: "EPSG:25831",
+    url: "https://geoserveis.icgc.cat/icgc_sentinel2/wms/service?",
+    params: {
+      LAYERS: "sen2rgb_mosaic_estiu_2019",
+    },
+  }),
+});
+const tileLayerFire2019Cat = new Tile({
+  source: new TileWMS({
+    projection: "EPSG:25831",
+    url: "https://geoserveis.icgc.cat/servei/catalunya/incendis/wms/service?",
+    params: {
+      LAYERS: "20190701-RiberaEbre-orto15cm-rgb",
+    },
+  }),
+});
+const map = new Map({
   target: "map",
   layers: [
     tileLayerOSM,
