@@ -1,1 +1,493 @@
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main 
+{
+  margin-top: 38px;
+}
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
 
+
+
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+.nav
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 9999;
+}
+ul, ol
+{
+list-style: none;
+}
+
+.nav li a
+{
+background-color: #000;
+color: #fff;
+text-decoration: none;
+padding: 10px 92px;
+display: block;
+}
+.nav li a:hover
+{
+background-color: #434343;
+}
+
+.nav > li
+{
+float: left;
+}
+
+.nav li ul
+{
+display: none;
+position: absolute;
+min-width: 140px;
+}
+
+.nav li:hover > ul
+{
+display: block;
+}
+
+.nav li ul li
+{
+position: relative;
+}
+
+.nav li ul li ul
+{
+right: -140px;
+top: 0px;
+}
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+.sliderPrime
+{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4e9cd;
+}
+.slider
+{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.slides
+{
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+.slides input
+{
+  display: none;
+}
+.slide
+{
+  width: 20%;
+  transition: 2s;
+}
+.slide img
+{
+  width: 100%;
+  height: 100%;
+}
+.nav-manual
+{
+  position: absolute;
+  width: 100%;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+.manual-btn
+{
+  border: 10px solid #d9eaec;
+  padding: 0px;
+  cursor: pointer;
+  transition: 1s;
+  border-radius: 30px;
+}
+.manual-btn:not(:last-child)
+{
+  margin-right: 100px;
+}
+.manual-btn:hover
+{
+  background-color: #e5e5e5;
+}
+#radio1:checked ~ .first
+{
+  margin-left: 0;
+}
+#radio2:checked ~ .first
+{
+  margin-left: -20%;
+}
+#radio3:checked ~ .first
+{
+  margin-left: -40%;
+}
+#radio4:checked ~ .first
+{
+  margin-left: -60%;
+}
+.nav-auto
+{
+  position: absolute;
+  display: flex;
+  width: 1000px;
+  justify-content: center;
+  margin-top: 460px;
+}
+.nav-auto div
+{
+  border: 0px solid #e5e5e5;
+  padding: 0px;
+  border-radius: 0px;
+  transition: 1s;
+}
+.nav-auto div:not(:last-child)
+{
+  margin-right: 0px;
+}
+#radio1:checked ~ .nav-auto .auto-btn1
+{
+  background-color: #e5e5e5;
+}
+#radio2:checked ~ .nav-auto .auto-btn2
+{
+  background-color: #e5e5e5;
+}
+#radio3:checked ~ .nav-auto .auto-btn3
+{
+  background-color: #e5e5e5;
+}
+#radio4:checked ~ .nav-auto .auto-btn4
+{
+  background-color: #e5e5e5;
+}
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+.image-section
+{
+  display: block;
+  display: flex;
+  background-color: #d9eaec;
+  padding: 50px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.galeria
+{
+  font-family: 'open sans';
+}
+.galeria h1
+{
+  text-align: center;
+  margin: 20px 0 15px 0;
+  font-weight: 300;
+}
+.contenedor-imagenes
+{
+  display: flex;
+  width: 85%;
+  margin: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-radius: 3px;
+}
+.contenedor-imagenes .imagen
+{
+  width: 32%;
+  position: relative;
+  height: 250px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,.75);
+}
+.imagen img
+{
+  width: 100%;
+  height: 100%;
+}
+.overlay
+{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  background: rgba(0,118,192,0.781);
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+  overflow: hidden;
+}
+.overlay h2
+{ 
+  color:white;
+  font-weight: 300%;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%,-50%);
+}
+.imagen:hover .overlay
+{
+  height: 100%;
+  cursor: pointer;
+}
+@media  screen and (max-width: 1000px)        /*MODIFICAR I POSAR-LO AL FINAL*/
+{
+  .contenedor-imagenes
+  {
+    width: 95%;
+    padding: 30px;
+  }
+}
+
+@media screen and( max-width:700px)         /*MODIFICAR I POSAR-LO AL FINAL*/
+{
+  .contenedor-imagenes
+  {
+    width: 90%;
+    padding: 30px;
+  }
+  .contenedor-imagenes .imagen
+  {
+    width: 48%;
+    padding: 30px;
+  }
+  
+}
+
+@media screen and( max-width:450px)        /*MODIFICAR I POSAR-LO AL FINAL*/
+{
+  h1
+  {
+    font-size: 22px;
+  }
+  .contenedor-imagenes
+  {
+    width: 98%;
+    padding: 30px;
+  }
+  .contenedor-imagenes .imagen
+  {
+    width: 80%;
+    padding: 30px;
+  }  
+}
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+.contactes
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.contenedor 
+{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#imatge-institut 
+{
+  max-width: 50%;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,.75);
+}
+.caixa-institut 
+{
+  display: flex;
+  flex-direction: column;
+  font-size: 40px;
+  margin-top: 28px;
+}
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+.Part-1
+{
+  padding-block-start: 2.5%;
+}
+.Part-2
+{
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  padding-top:  4.84%;
+  padding-left: 1%;
+}
+
+.Part-3
+{
+  padding-top: 4.56%;
+}
+
+#imatge-part-1-1
+{
+  padding-left: 80%;
+  box-shadow: -23px 8px 18px 22px rgb(0, 0, 0);
+}
+.caixa-1
+{
+  text-align: justify;
+  line-height: 1.5;
+  position: absolute;
+  padding-inline: 2%;
+  padding-block-start: 4%;
+}
+
+#imatge-part-2-1
+{
+  padding-right: 81.8%;
+  box-shadow: 23px 8px 18px 22px rgb(0, 0, 0);
+}
+.caixa-2
+{
+  text-align: justify;
+  line-height: 1.5;
+  position: absolute;
+  padding-block-end: 4%;
+  padding-left: 24%;
+}
+
+#imatge-part-3-1
+{
+  padding-left: 80%;
+  box-shadow: -23px 8px 18px 22px rgb(0, 0, 0);
+}
+.caixa-3
+{
+  text-align: justify;
+  line-height: 1.5;
+  position: absolute;
+  padding-inline: 2%;
+  padding-block-start: 4%;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+.web-1
+{
+  padding-block-start: 2.5%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.web-2
+{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.idees
+{
+  text-align: justify;
+  width: 100%;
+  padding-left: 5%;
+  padding-top: 2%;
+  padding-right: 5%;
+  position: relative;
+}
+#imatge-idees
+{
+  padding-top: 5%;
+  padding-left: 10%;
+  position: absolute;
+  width: 70%;
+}
+
+.plantejament
+{
+  text-align: justify;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  position: relative;
+}
+#imatge-plantejament
+{
+  padding-top: 5%;
+  padding-left: 10%;
+  position: absolute;
+  width: 70%;
+}
+
+.prova-i-error
+{
+  text-align: justify;
+  width: 100%;
+  padding-left: 5%;
+  padding-top: 4%;
+  padding-right: 5%;
+  position: relative;
+}
+#imatge-prova-i-error
+{
+  padding-top: 5%;
+  padding-left: 10%;
+  position: absolute;
+  width: 70%;
+}
+
+.perfeccionar
+{
+  text-align: justify;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 4%;
+  position: relative;
+}
+#imatge-perfeccionar
+{
+  padding-top: 5%;
+  padding-left: 10%;
+  position: absolute;
+  width: 70%;
+}
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
