@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style/style.css">
     <script src="java.js"></script>
     <title>⭐WEB 1er A Batxillerat⭐</title>
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenLayers</title>
 </head>
 <body>
 <!--------------------------------------------------------------------------------------------------------------------------------------->
@@ -135,6 +137,41 @@
 <!--------------------------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------------------------------------------------------------------------------------------------->
 </main>
-
+<div id="map" class="map-wrapper"></div>
+<script>
+import "./SCSS/index.scss";
+import { Map, View } from "ol";
+import { Tile } from "ol/layer";
+import { OSM, TileWMS } from "ol/source";
+import { fromLonLat } from "ol/proj";
+import GUI from "lil-gui";
+const tileLayerTopoCat = new Tile({
+    source: new TileWMS({
+      projection: "EPSG:25831",
+      url: "https://geoserveis.icgc.cat/icc_mapesmultibase/utm/wms/service?",
+      params: {
+        LAYERS: "topo",
+      },
+    }),
+  });
+  const tileLayerSummer2019Cat = new Tile({
+    source: new TileWMS({
+      projection: "EPSG:25831",
+      url: "https://geoserveis.icgc.cat/icgc_sentinel2/wms/service?",
+      params: {
+        LAYERS: "sen2rgb_mosaic_estiu_2019",
+      },
+    }),
+  });
+  const tileLayerFire2019Cat = new Tile({
+    source: new TileWMS({
+      projection: "EPSG:25831",
+      url: "https://geoserveis.icgc.cat/servei/catalunya/incendis/wms/service?",
+      params: {
+        LAYERS: "20190701-RiberaEbre-orto15cm-rgb",
+      },
+    }),
+  });
+</script>
 </body>
 </html>
