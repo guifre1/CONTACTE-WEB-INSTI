@@ -16,7 +16,7 @@
 <!--------------------------------------------------------------------------------------------------------------------------------------->
 <ul class="nav">
 
-  <li><a href="index.html">INICIo</a></li>
+  <li><a href="index.html">INICI</a></li>
 
   <li><a href="qui_som">QUI SOM?</a></li>
 
@@ -172,6 +172,19 @@ const tileLayerTopoCat = new Tile({
       },
     }),
   });
+  const map = new Map({
+  target: "map",
+  layers: [
+    tileLayerOSM,
+    tileLayerTopoCat,
+    tileLayerSummer2019Cat,
+    tileLayerFire2019Cat,
+  ],
+  view: new View({
+    center: fromLonLat([0.600712, 41.280345]),
+    zoom: 12,
+  }),
+});
 </script>
 </body>
 </html>
